@@ -23,9 +23,9 @@
       width: $size
       height: $size
 
+    @include loader-position-size($button-size-normal)
     position: absolute
     box-sizing: border-box
-    @include loader-position-size($button-size-normal)
     border: 3px solid #3498db
     border-right: 3px solid transparent
     border-radius: 50%

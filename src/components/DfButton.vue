@@ -8,6 +8,7 @@
       :loading="loading"
       :plain="plain"
       :round="round"
+      :cta="cta"
       @click="$emit('click')">
     <slot></slot>
     </button>
@@ -23,7 +24,8 @@
       size: String,
       loading: Boolean,
       round: Boolean,
-      plain: Boolean
+      plain: Boolean,
+      cta: Boolean
     },
     computed: {
       isDisabled () {
@@ -43,8 +45,8 @@
     @mixin button-font-padding($size)
       font-size: $size/2
       padding: $size/4 $size/2
-      .fa
-        padding-right: $size/2
+      //svg
+        //padding-right: $size/4
 
     @mixin button-template($color)
       color: $color-white
@@ -84,7 +86,7 @@
         color: $color-white
 
       &[round]
-        border-radius: 25px
+        border-radius: 40px
 
       &[size='small']
         @include button-font-padding($button-size-small)
@@ -94,6 +96,13 @@
 
       &[loading]
         opacity: 0.1
+
+      &[cta]
+        font-size: 25px
+        width: 60px
+        height: 60px
+        padding: 15px
+        box-shadow: 2px 4px 6px $color-light-grey
 
       $color-types: (danger: $color-type-danger, success: $color-type-success, info: $color-type-info, primary: $color-type-primary, warning: $color-type-warning)
 
