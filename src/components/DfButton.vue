@@ -39,6 +39,7 @@
 <style lang="sass" scoped>
   @import '../sass/main.sass'
   ._df-button
+    display: table
     position: relative
     margin: 5px
 
