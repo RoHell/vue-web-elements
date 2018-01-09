@@ -16,7 +16,7 @@
 </script>
 
 <style lang="sass" scoped>
-  @import '../sass/main.sass'
+  @import '../../sass/main.sass'
 
   ._df-loader
 

@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import DfButton from './DfButton'
+  import DfButton from '../elements/DfButton'
 	export default {
     data () {
       return {}
