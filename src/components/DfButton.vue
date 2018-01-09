@@ -1,6 +1,6 @@
 <template>
   <div class="_df-button">
-    <df-loader v-if="loading" :size="size"></df-loader>
+    <df-loader v-if="loading" :size="size" :class="colorType"></df-loader>
     <button
       :class="colorType"
       :disabled="isDisabled"
@@ -96,7 +96,7 @@
         @include button-font-padding($button-size-big)
 
       &[loading]
-        opacity: 0.1
+        opacity: 0.4
 
       &[cta]
         font-size: 25px
@@ -105,9 +105,9 @@
         padding: 15px
         box-shadow: 2px 4px 6px $color-light-grey
 
-      $color-types: (danger: $color-type-danger, success: $color-type-success, info: $color-type-info, primary: $color-type-primary, warning: $color-type-warning)
+      $color-types-map: (danger: $color-type-danger, success: $color-type-success, info: $color-type-info, primary: $color-type-primary, warning: $color-type-warning)
 
-      @each $color-type, $color in $color-types
+      @each $color-type, $color in $color-types-map
         &.#{$color-type}
           @include button-template($color)
 
