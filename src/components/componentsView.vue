@@ -1,16 +1,16 @@
 <template>
   <div id="app">
     <div class="buttons">
-      <df-button @click="callback">normal</df-button>
-      <df-button colorType="danger" plain>danger</df-button>
+      <df-button @click="callback" loading>normal</df-button>
+      <df-button colorType="danger" plain loading>danger</df-button>
       <df-button colorType="success" round>
         <i class="fas fa-upload"></i>
         <span>succes</span>
       </df-button>
-      <df-button colorType="info" size="big" round cta>
+      <df-button colorType="info" size="big" round cta loading>
         <i class="fas fa-plus"></i>
       </df-button>
-      <df-button colorType="primary" size="small">
+      <df-button colorType="primary" size="small" loading>
         <i class="fas fa-upload"></i>
         <span>primary</span>
       </df-button>
