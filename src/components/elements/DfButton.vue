@@ -1,18 +1,20 @@
-<template>
-  <div class="_df-button">
-    <df-loader v-if="loading" :size="size" :class="colorType"></df-loader>
-    <button
-      :class="colorType"
-      :disabled="isDisabled"
-      :size="size"
-      :loading="loading"
-      :plain="plain"
-      :round="round"
-      :cta="cta"
-      @click="$emit('click')">
-    <slot></slot>
-    </button>
-  </div>
+<template lang="pug">
+  ._df-button
+    df-loader(
+      v-if='loading', 
+      :size='size', 
+      :color='colorType')
+    button(
+      :class='colorType', 
+      :disabled='isDisabled', 
+      :size='size', 
+      :loading='loading', 
+      :plain='plain', 
+      :round='round', 
+      :cta='cta',
+       @click="$emit('click')")
+      slot
+
 </template>
 
 <script>
@@ -37,7 +39,9 @@
 </script>
 
 <style lang="sass" scoped>
-  @import '../../sass/main.sass'
+  @import '../../sass/base/dimensions.sass'
+  @import '../../sass/base/colors.sass'
+  
   ._df-button
     display: table
     position: relative
@@ -46,8 +50,8 @@
     @mixin button-font-padding($size)
       font-size: $size/2
       padding: $size/4 $size/2
-      //svg
-        //padding-right: $size/4
+      svg, .fa
+        padding-right: $size/2
 
     @mixin button-template($color)
       color: $color-white
@@ -79,7 +83,10 @@
         opacity: 1
         border: 1px solid rgba($color-type-primary, 0.5)
         color: $color-type-primary
+      &:active:not([disabled])
+        box-shadow: 0 0 0 transparent
 
+        
       &[disabled]
         cursor: default
         opacity: 0.4
@@ -100,10 +107,12 @@
 
       &[cta]
         font-size: 25px
-        width: 60px
-        height: 60px
+        width: $button-size-cta
+        height: $button-size-cta
         padding: 15px
-        box-shadow: 2px 4px 6px $color-light-grey
+        box-shadow: 0 4px 8px $color-light-grey
+        svg, .fa
+          padding-right: 0
 
       $color-types-map: (danger: $color-type-danger, success: $color-type-success, info: $color-type-info, primary: $color-type-primary, warning: $color-type-warning)
 

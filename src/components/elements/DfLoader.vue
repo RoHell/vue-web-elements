@@ -1,5 +1,5 @@
-<template>
-  <div class="_df-loader" :size="size" :class="color"></div>
+<template lang="pug">
+  ._df-loader(:size="size", :class="color")
 </template>
 
 <script>
@@ -9,17 +9,18 @@
         type: String
       },
       color: {
-        type: String
+        type: String,
+        default: 'info'
       }
     }
   }
 </script>
 
 <style lang="sass" scoped>
-  @import '../../sass/main.sass'
+  @import '../../sass/base/dimensions.sass'
+  @import '../../sass/base/colors.sass'
 
   ._df-loader
-
     @mixin loader-position-size($size)
       top: calc(50% - #{$size/2})
       left: calc(50% - #{$size/2})

@@ -1,23 +1,18 @@
-<template>
-  <div id="app">
-    <div class="buttons">
-      <df-button @click="callback" loading>normal</df-button>
-      <df-button colorType="danger" plain loading>danger</df-button>
-      <df-button colorType="success" round>
-        <i class="fas fa-upload"></i>
-        <span>succes</span>
-      </df-button>
-      <df-button colorType="info" size="big" round cta loading>
-        <i class="fas fa-plus"></i>
-      </df-button>
-      <df-button colorType="primary" size="small" loading>
-        <i class="fas fa-upload"></i>
-        <span>primary</span>
-      </df-button>
-      <df-button colorType="warning" loading>loading</df-button>
-      <df-button colorType="danger" disabled>disabled</df-button>
-    </div>
-  </div>
+<template lang="pug">
+  #app
+    .buttons
+      df-button(@click='callback') normal
+      df-button(color-type='danger', plain, loading) danger
+      df-button(color-type='success', round)
+        i.fas.fa-upload
+        span succes
+      df-button(color-type='info', size='big', round, cta, loading)
+        i.fas.fa-plus
+      df-button(color-type='primary', size='small', loading)
+        i.fas.fa-upload
+        span primary
+      df-button(color-type='warning', loading) loading
+      df-button(color-type='danger', loading) disabled
 </template>
 
 <script>
