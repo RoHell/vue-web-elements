@@ -45,9 +45,7 @@
 
 
     @keyframes spin
-      0%
-        transform: rotate(0deg)
-      100%
+      to
         transform: rotate(360deg)
 
     $color-types-map: (danger: $color-type-danger, success: $color-type-success, info: $color-type-info, primary: $color-type-primary, warning: $color-type-warning)
