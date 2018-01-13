@@ -96,12 +96,6 @@
       &[round]
         border-radius: 40px
 
-      &[size='small']
-        @include button-font-padding($button-size-small)
-
-      &[size='big']
-        @include button-font-padding($button-size-big)
-
       &[loading]
         opacity: 0.4
 
@@ -114,10 +108,11 @@
         svg, .fa
           padding-right: 0
 
-      $color-types-map: (danger: $color-type-danger, success: $color-type-success, info: $color-type-info, primary: $color-type-primary, warning: $color-type-warning)
-
       @each $color-type, $color in $color-types-map
         &.#{$color-type}
           @include button-template($color)
 
+      @each $size, $button-size in $button-sizes-map
+        &[size=#{$size}]
+          @include button-font-padding($button-size)
 </style>

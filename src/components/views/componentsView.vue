@@ -12,7 +12,7 @@
         i.fas.fa-upload
         span primary
       df-button(color-type='warning', loading) loading
-      df-button(color-type='danger', loading) disabled
+      df-button(loading) disabled
 </template>
 
 <script>
