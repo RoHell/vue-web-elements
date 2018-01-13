@@ -10,7 +10,7 @@
   }
 </script>
 
-<style lang="sass"> 
+<style lang="sass">
   #_app
     font-family: 'Lato', sans-serif
     font-style: normal
