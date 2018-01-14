@@ -1,5 +1,9 @@
 <template lang="pug">
-  ._df-loader(:size="size", :class="color")
+  ._df-loader
+    div(:size="size", :class="color")
+    div(:size="size", :class="color")
+    div(:size="size", :class="color")
+    div(:size="size", :class="color")
 </template>
 
 <script>
@@ -21,31 +25,42 @@
   @import '../../sass/base/colors.sass'
 
   ._df-loader
-    @mixin loader-position-size($size)
-      top: calc(50% - #{$size/2})
-      left: calc(50% - #{$size/2})
-      width: $size
-      height: $size
-
-    @include loader-position-size($button-size-normal)
     position: absolute
-    box-sizing: border-box
-    border-radius: 50%
+    width: 100%
+    height: 100%
     z-index: 10
-    opacity: 0.6
-    animation: spin 1.5s linear infinite
 
-    @keyframes spin
-      to
-        transform: rotate(360deg)
+    div
+      @mixin loader-position-size($size)
+        top: calc(50% - #{$size/2})
+        left: calc(50% - #{$size/2})
+        width: $size
+        height: $size
 
-    @each $size, $button-size in $button-sizes-map
-      &[size=#{$size}]
-        @include loader-position-size($button-size)
+      @include loader-position-size($button-size-normal)
+      position: absolute
+      box-sizing: border-box
+      border-radius: 50%
+      animation: spin 1.5s cubic-bezier(0.8, 0.4, 0.5, 0.2) infinite
 
-    @each $color-type, $color in $color-types-map
-      &.#{$color-type}
-        border: 3px solid $color
-        border-right: 3px solid transparent
+      @keyframes spin
+        to
+          transform: rotate(360deg)
+
+      @each $size, $button-size in $button-sizes-map
+        &[size=#{$size}]
+          @include loader-position-size($button-size)
+
+      @each $color-type, $color in $color-types-map
+        &.#{$color-type}
+          border: 3px solid transparent
+          border-right-color: lighten($color, 15%)
+
+      &:nth-child(2)
+        animation-delay: .1s
+      &:nth-child(3)
+        animation-delay: .3s
+      &:nth-child(4)
+        animation-delay: .5s
 
 </style>

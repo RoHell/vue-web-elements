@@ -2,17 +2,17 @@
   #app
     .buttons
       df-button(@click='callback') normal
-      df-button(color-type='danger', plain, loading) danger
+      df-button(color-type='danger', plain, loading) danger plain loading
       df-button(color-type='success', round)
         i.fas.fa-upload
-        span succes
+        span succes round
       df-button(color-type='info', size='big', round, cta, loading)
         i.fas.fa-plus
       df-button(color-type='primary', size='small', loading)
         i.fas.fa-upload
-        span primary
+        span small primary loading
       df-button(color-type='warning', loading) loading
-      df-button(loading) disabled
+      df-button(loading) just loading
 </template>
 
 <script>
