@@ -38,7 +38,7 @@
       position: absolute
       box-sizing: border-box
       border-radius: 50%
-      animation: spin 1.5s cubic-bezier(0.8, 0.4, 0.5, 0.2) infinite
+      animation: spin 1.2s cubic-bezier(0.55, 0.2, 0.55, 0.8) infinite
 
       @keyframes spin
         to
@@ -48,16 +48,12 @@
         &[size=#{$size}]
           @include loader-position-size($button-size)
 
-      @each $color-type, $color in $color-types-map
+      @each $color-type, $color, $index in $color-types-map
         &.#{$color-type}
-          border: 3px solid transparent
+          border: 2px solid transparent
           border-right-color: lighten($color, 15%)
 
-      &:nth-child(2)
-        animation-delay: .1s
-      &:nth-child(3)
-        animation-delay: .3s
-      &:nth-child(4)
-        animation-delay: .5s
-
+      @for $i from 2 through 4
+        &:nth-child(#{$i})
+          animation-delay: #{($i*2-3)/10}s
 </style>

@@ -41,31 +41,32 @@
 <style lang="sass" scoped>
   @import '../../sass/base/dimensions.sass'
   @import '../../sass/base/colors.sass'
+
+  @mixin button-font-padding($size)
+    font-size: $size/2
+    padding: $size/4 $size/2
+    svg, .fa
+      padding-right: $size/2
+
+  @mixin button-template($color)
+    color: $color-white
+    background-color: $color
+    border: 1px solid $color
+
+    &[plain]
+      border: 1px solid rgba($color, 0.5)
+      background-color: $color-white
+      color: $color
+
+    &:hover:not([disabled])
+      border: 1px solid rgba($color, 0.5)
+      background-color: $color
+      color: $color-white
   
   ._df-button
     display: table
     position: relative
     margin: 5px
-
-    @mixin button-font-padding($size)
-      font-size: $size/2
-      padding: $size/4 $size/2
-      svg, .fa
-        padding-right: $size/2
-
-    @mixin button-template($color)
-      color: $color-white
-      background-color: $color
-      border: 1px solid $color
-      &[plain]
-        border: 1px solid rgba($color, 0.5)
-        background-color: $color-white
-        color: $color
-
-      &:hover:not([disabled])
-        border: 1px solid rgba($color, 0.5)
-        background-color: $color
-        color: $color-white
 
     button
       @include button-font-padding($button-size-normal)
