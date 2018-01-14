@@ -1,9 +1,6 @@
 <template lang="pug">
   ._df-loader
-    div(:size="size", :class="color")
-    div(:size="size", :class="color")
-    div(:size="size", :class="color")
-    div(:size="size", :class="color")
+    div(v-for="div in 4", :size="size", :class="color")
 </template>
 
 <script>
