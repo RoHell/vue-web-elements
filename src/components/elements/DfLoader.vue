@@ -1,6 +1,5 @@
 <template lang="pug">
-  ._df-loader
-    div(v-for="div in 4", :size="size", :class="color")
+  ._df-loader(:size="size", :class="color")
 </template>
 
 <script>
@@ -10,8 +9,7 @@
         type: String
       },
       color: {
-        type: String,
-        default: 'info'
+        type: String
       }
     }
   }
@@ -32,27 +30,25 @@
     width: 100%
     height: 100%
     z-index: 10
-    div
-      @include loader-position-size($button-size-normal)
-      position: absolute
-      box-sizing: border-box
-      border-radius: 50%
-      animation: spin 1.3s cubic-bezier(0.55, 0.2, 0.55, 0.8) infinite
+    border: 3px solid #999
+    border-right-color: transparent
 
-      @keyframes spin
-        to
-          transform: rotate(360deg)
+    @include loader-position-size($button-size-normal)
+    position: absolute
+    box-sizing: border-box
+    border-radius: 50%
+    animation: spin 1.3s cubic-bezier(0.55, 0.2, 0.55, 0.8) infinite
 
-      @each $size, $button-size in $button-sizes-map
-        &[size=#{$size}]
-          @include loader-position-size($button-size)
+    @keyframes spin
+      to
+        transform: rotate(360deg)
 
-      @each $color-type, $color, $index in $color-types-map
-        &.#{$color-type}
-          border: 3px solid transparent
-          border-right-color: lighten($color, 15%)
+    @each $size, $button-size in $button-sizes-map
+      &[size=#{$size}]
+        @include loader-position-size($button-size)
 
-      @for $i from 2 through 4
-        &:nth-child(#{$i})
-          animation-delay: #{($i*2-3)/10}s
+    @each $color-type, $color, $index in $color-types-map
+      &.#{$color-type}
+        border: 3px solid lighten($color, 15%)
+        border-right-color: transparent
 </style>
