@@ -1,6 +1,6 @@
 {
   "name": "vue-web-components",
-  "description": null,
+  "description": "web elements build with vue, sass",
   "version": "0.0.131",
   "dependencies": {
     "vue-router": "3.0.1",
@@ -26,7 +26,7 @@
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.0",
     "cssnano": "^3.10.0",
-    "eslint": "^3.19.0",
+    "eslint": "^4.14.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
@@ -102,5 +102,19 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": ".postcssrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoHell/vue-web-elements.git"
+  },
+  "author": "RoHell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoHell/vue-web-elements/issues"
+  },
+  "homepage": "https://github.com/RoHell/vue-web-elements#readme"
 }
