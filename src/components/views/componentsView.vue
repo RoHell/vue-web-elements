@@ -1,22 +1,22 @@
 <template lang="pug">
   #app
     .buttons
-      df-button(@click='callback') normal
-      df-button(color-type='danger', plain, loading) danger plain loading
-      df-button(color-type='success', round)
+      rh-button(@click='callback') normal
+      rh-button(color-type='danger', plain, loading) danger plain loading
+      rh-button(color-type='success', round)
         i.fas.fa-upload
         span succes round
-      df-button(color-type='info', size='big', round, cta, loading)
+      rh-button(color-type='info', size='big', round, cta, loading)
         i.fas.fa-plus
-      df-button(color-type='primary', size='small', loading)
+      rh-button(color-type='primary', size='small', loading)
         i.fas.fa-upload
         span small primary loading
-      df-button(color-type='warning', loading) loading
-      df-button(loading) just loading
+      rh-button(color-type='warning', loading) loading
+      rh-button(loading) just loading
 </template>
 
 <script>
-  import DfButton from '../elements/DfButton'
+  import RhButton from '../elements/RhButton'
 	export default {
     data () {
       return {}
@@ -26,7 +26,7 @@
         alert('kliknięty');
       }
     },
-    components: {DfButton}
+    components: {RhButton}
   }
 
 </script>
