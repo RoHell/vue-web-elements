@@ -38,70 +38,29 @@
 
 <style lang="sass" scoped>
   @import '../../sass/base/dimensions.sass'
-  @import '../../sass/base/colors.sass'
+  @import '../../sass/components/button.sass'
 
-  @mixin button-font-padding($size)
+
+  =button-font-padding($size)
     font-size: $size/2
     padding: $size/4 $size/2
     svg, .fa
       padding-right: $size/2
-
-  @mixin button-template($color)
-    color: $color-white
-    background-color: $color
-    border: 1px solid $color
-
-    &[plain]
-      border: 1px solid rgba($color, 0.5)
-      background-color: $color-white
-      color: $color
-
-    &:hover:not([disabled])
-      border: 1px solid rgba($color, 0.5)
-      background-color: $color
-      color: $color-white
   
   ._rh-button
     display: table
     position: relative
 
     button
-      @include button-font-padding($button-size-normal)
-      border: 1px solid $color-gray
+      @extend %button
       border-radius: 4px
-      letter-spacing: 1px
-      cursor: pointer
-      outline: none
-      background-color: $color-white
-      color: $color-font-main
-      transition: 0.3s
-      opacity: 0.9
-      &:hover:not([disabled])
-        box-shadow: 2px 2px 6px $color-light-grey
-        opacity: 1
-        border: 1px solid rgba($color-type-primary, 0.5)
-        color: $color-type-primary
-      &:active:not([disabled])
-        box-shadow: 0 0 0 transparent
 
-        
-      &[disabled]
-        cursor: default
-        opacity: 0.4
-        background-color: $color-gray
-        color: $color-white
+      +button-font-padding($button-size-normal)
 
       &[round]
         border-radius: 40px
 
-      &[loading]
-        opacity: 0.4
-
-      @each $color-type, $color in $color-types-map
-        &.#{$color-type}
-          @include button-template($color)
-
       @each $size, $button-size in $button-sizes-map
         &[size=#{$size}]
-          @include button-font-padding($button-size)
+          +button-font-padding($button-size)
 </style>

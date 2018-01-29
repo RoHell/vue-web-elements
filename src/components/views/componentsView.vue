@@ -10,10 +10,10 @@
         rh-floating-button(color-type='success', top, right, plain)
           i.fas.fa-plus
       .cta-wrapper
-        rh-floating-button(color-type='primary', bottom, left, loading, size="big")
+        rh-floating-button(loading)
           i.fas.fa-plus
       .cta-wrapper
-        rh-floating-button(color-type='primary', top, left, disabled, size="small")
+        rh-floating-button(color-type='primary',left, top, disabled, size="small")
           i.fas.fa-plus
       .cta-wrapper
         rh-floating-button(color-type='warning', bottom, right)
