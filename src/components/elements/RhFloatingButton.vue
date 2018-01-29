@@ -83,7 +83,8 @@
       button
         @extend %button
         border-radius: 50%
-
+        box-shadow: 0 4px 8px $color-light-grey
+        
         @each $size, $button-size in $button-sizes-map
           &[size=#{$size}]
             +button-size($button-size)        

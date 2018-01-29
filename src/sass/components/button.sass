@@ -24,13 +24,13 @@
       border: 1px solid $button-disabled-color
 
     &:hover:not([disabled])
-      border: 1px solid $button-normal-color
+      border: 1px solid $color
       background-color: $color
       color: $color-white
+      
 %button
     $button-disabled-color: lighten($color-gray, 30%)
-
-    box-shadow: 0 4px 8px $color-light-grey
+    
     border: 1px solid $color-gray
     letter-spacing: 1px
     padding: 0
@@ -41,7 +41,7 @@
     transition: 0.3s
     &:hover:not([disabled])
         box-shadow: 2px 2px 6px $color-light-grey
-        border: 1px solid lighten($color-type-primary, 50%)
+        border: 1px solid lighten($color-type-primary, 20%)
         color: $color-type-primary
     &:active:not([disabled])
         box-shadow: 0 0 0 transparent

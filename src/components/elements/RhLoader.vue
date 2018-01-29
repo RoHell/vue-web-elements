@@ -19,9 +19,10 @@
   @import '../../sass/base/dimensions.sass'
   @import '../../sass/base/colors.sass'
 
-  @mixin loader-position-size($size)
-    top: calc(50% - #{$size/2})
-    left: calc(50% - #{$size/2})
+  =loader-position-size($size)
+    $center-position: calc(50% - #{$size/2})
+    top: $center-position
+    left: $center-position
     width: $size
     height: $size
 
@@ -30,14 +31,12 @@
     width: 100%
     height: 100%
     z-index: 10
-    border: 3px solid #999
-    border-right-color: transparent
-
-    @include loader-position-size($button-size-normal)
-    position: absolute
+    border: 3px solid $color-gray
+    border-right-color: transparent    
     box-sizing: border-box
     border-radius: 50%
     animation: spin 1.3s cubic-bezier(0.55, 0.2, 0.55, 0.8) infinite
+    +loader-position-size($button-size-normal)
 
     @keyframes spin
       to
@@ -45,7 +44,7 @@
 
     @each $size, $button-size in $button-sizes-map
       &[size=#{$size}]
-        @include loader-position-size($button-size)
+        +loader-position-size($button-size)
 
     @each $color-type, $color, $index in $color-types-map
       &.#{$color-type}
