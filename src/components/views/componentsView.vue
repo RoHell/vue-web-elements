@@ -6,8 +6,21 @@
       rh-button(color-type='success', round)
         i.fas.fa-upload
         span succes round
-      rh-button(color-type='info', size='big', round, cta, loading)
-        i.fas.fa-plus
+      .cta-wrapper
+        rh-floating-button(color-type='success', top, right, plain)
+          i.fas.fa-plus
+      .cta-wrapper
+        rh-floating-button(color-type='primary', bottom, left, loading, size="big")
+          i.fas.fa-plus
+      .cta-wrapper
+        rh-floating-button(color-type='primary', top, left, disabled, size="small")
+          i.fas.fa-plus
+      .cta-wrapper
+        rh-floating-button(color-type='warning', bottom, right)
+          i.fas.fa-plus
+      .cta-wrapper
+        rh-floating-button(color-type='danger', bottom, left, size="big")
+          i.fas.fa-plus
       rh-button(color-type='primary', size='small', loading)
         i.fas.fa-upload
         span small primary loading
@@ -17,6 +30,7 @@
 
 <script>
   import RhButton from '../elements/RhButton'
+  import RhFloatingButton from '../elements/RhFloatingButton'
 	export default {
     data () {
       return {}
@@ -26,7 +40,7 @@
         alert('kliknięty');
       }
     },
-    components: {RhButton}
+    components: {RhButton, RhFloatingButton}
   }
 
 </script>
@@ -35,7 +49,12 @@
   #app
     padding: 50px
     .buttons
-      display: inline-flex
+      display: flex
       flex-wrap: wrap
+      .cta-wrapper
+        position: relative
+        width: 300px
+        height: 100px
+        border: 1px solid #ccc
 
 </style>
