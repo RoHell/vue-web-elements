@@ -19,18 +19,21 @@
         rh-floating-button(color-type='warning', bottom, right)
           i.fas.fa-plus
       .cta-wrapper
+        rh-loader(size="large")
         rh-floating-button(color-type='danger', bottom, left, size="big")
           i.fas.fa-plus
       rh-button(color-type='primary', size='small', loading)
         i.fas.fa-upload
         span small primary loading
-      rh-button(color-type='warning', loading) loading
-      rh-button(loading) just loading
+      rh-button(color-type='warning', loading, size="tiny") loading
+      rh-button(loading size="big") just loading
+      rh-button(loading size="large") just loading
 </template>
 
 <script>
   import RhButton from '../elements/RhButton'
   import RhFloatingButton from '../elements/RhFloatingButton'
+  import RhLoader from '../elements/RhLoader'
 	export default {
     data () {
       return {}
@@ -40,7 +43,7 @@
         alert('kliknięty');
       }
     },
-    components: {RhButton, RhFloatingButton}
+    components: {RhButton, RhFloatingButton, RhLoader}
   }
 
 </script>

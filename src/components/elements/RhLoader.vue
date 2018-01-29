@@ -31,18 +31,18 @@
     width: 100%
     height: 100%
     z-index: 10
-    border: 3px solid $color-gray
+    border: 3px solid $color-light-grey
     border-right-color: transparent    
     box-sizing: border-box
     border-radius: 50%
     animation: spin 1.3s cubic-bezier(0.55, 0.2, 0.55, 0.8) infinite
-    +loader-position-size($button-size-normal)
+    +loader-position-size($size-normal)
 
     @keyframes spin
       to
         transform: rotate(360deg)
 
-    @each $size, $button-size in $button-sizes-map
+    @each $size, $button-size in $sizes-map
       &[size=#{$size}]
         +loader-position-size($button-size)
 

@@ -55,12 +55,12 @@
       @extend %button
       border-radius: 4px
 
-      +button-font-padding($button-size-normal)
+      +button-font-padding($size-normal)
 
       &[round]
         border-radius: 40px
 
-      @each $size, $button-size in $button-sizes-map
+      @each $size, $button-size in $sizes-map
         &[size=#{$size}]
           +button-font-padding($button-size)
 </style>
