@@ -7,20 +7,22 @@
         i.fas.fa-upload
         span succes round
       .cta-wrapper
-        rh-floating-button(color-type='success', top, right, plain)
+        rh-floating-button(color-type='success', top, right, plain, size="tiny")
           i.fas.fa-plus
       .cta-wrapper
-        rh-floating-button(loading)
+        rh-floating-button(loading style="marginLeft: 20px; marginTop: 30px")
           i.fas.fa-plus
       .cta-wrapper
-        rh-floating-button(color-type='primary',left, top, disabled, size="small")
+        rh-floating-button(color-type='primary', left, top, disabled, size="small")
           i.fas.fa-plus
       .cta-wrapper
+        rh-floating-button(color-type='warning', fixed, bottom, right)
+          i.fas.fa-plus
         rh-floating-button(color-type='warning', bottom, right)
           i.fas.fa-plus
       .cta-wrapper
         rh-loader(size="large")
-        rh-floating-button(color-type='danger', bottom, left, size="big")
+        rh-floating-button(color-type='danger', fixed, bottom, left, size="big")
           i.fas.fa-plus
       rh-button(color-type='primary', size='small', loading)
         i.fas.fa-upload

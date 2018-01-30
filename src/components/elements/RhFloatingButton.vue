@@ -4,7 +4,9 @@
     :bottom='bottom',
     :left='left',
     :right='right',
-    :size='size'
+    :size='size',
+    :absolute='absolute',
+    :fixed='fixed'
   )
     ._rh-button
       rh-loader(
@@ -36,7 +38,9 @@
       top: Boolean,
       bottom: Boolean,
       left: Boolean,
-      right: Boolean
+      right: Boolean,
+      absolute: Boolean,
+      fixed: Boolean
     },
     computed: {
       isDisabled () {
@@ -60,21 +64,34 @@
     width: $button-box-size
     height: $button-box-size
 
-  =button-position($size)
+  =button-absolute-position($size)
     $offset: $size*1.5/2
-    $button-offset-map: (top: -$offset, bottom: -$offset, left: $offset, right: $offset)
+    $offset-map: (top: -$offset, bottom: -$offset, left: $offset, right: $offset)
 
-    @each $position, $offset in $button-offset-map
+    @each $position, $offset in $offset-map
       &[#{$position}]
         #{$position}: $offset
 
+  =button-fixed-position($size)
+    $offset-map: (top, bottom, left, right)
+
+    @each $position in $offset-map
+      &[#{$position}]
+        #{$position}: $size*1.5/2
+
   .rh-floating-button
-    position: absolute
     z-index: 10
 
     @each $size, $button-size in $sizes-map
       &[size=#{$size}]
-        +button-position($button-size) 
+        position: absolute
+        +button-absolute-position($button-size)
+
+    &[fixed]
+      @each $size, $button-size in $sizes-map
+        &[size=#{$size}]
+          position: fixed
+          +button-fixed-position($button-size)
 
     ._rh-button
       display: table
