@@ -6,7 +6,7 @@
       :color='colorType')
     button(
       :class='colorType', 
-      :disabled='isDisabled', 
+      :disabled='disabled || loading', 
       :size='size', 
       :loading='loading', 
       :plain='plain', 
@@ -27,11 +27,7 @@
       round: Boolean,
       plain: Boolean
     },
-    computed: {
-      isDisabled () {
-        return this.disabled || this.loading
-      }
-    },
+    computed: {},
     components: {RhLoader}
   }  
 </script>
