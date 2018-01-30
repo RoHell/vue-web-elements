@@ -1,5 +1,5 @@
 <template lang="pug">
-  ._rh-button
+  .rh-button
     rh-loader(
       v-if='loading', 
       :size='size', 
@@ -47,7 +47,7 @@
     svg, .fa
       padding-right: $size/2
   
-  ._rh-button
+  .rh-button
     display: table
     position: relative
 

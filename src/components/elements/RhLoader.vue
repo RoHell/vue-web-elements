@@ -1,5 +1,5 @@
 <template lang="pug">
-  ._rh-loader(:size="size", :class="color")
+  .rh-loader(:size="size", :class="color")
 </template>
 
 <script>
@@ -26,7 +26,7 @@
     width: $size
     height: $size
 
-  ._rh-loader
+  .rh-loader
     position: absolute
     width: 100%
     height: 100%

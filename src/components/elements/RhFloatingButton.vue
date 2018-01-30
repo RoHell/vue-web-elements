@@ -8,7 +8,7 @@
     :absolute='absolute',
     :fixed='fixed'
   )
-    ._rh-button
+    .rh-button
       rh-loader(
         v-if='loading', 
         :size='size', 
@@ -93,7 +93,7 @@
           position: fixed
           +button-fixed-position($button-size)
 
-    ._rh-button
+    .rh-button
       display: table
       position: relative
 
