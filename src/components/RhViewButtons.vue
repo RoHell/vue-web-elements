@@ -1,5 +1,5 @@
 <template lang="pug">
-  #app
+  .rh-view-buttons
     .buttons
       rh-button(@click='callback') normal
       rh-button(color-type='danger', plain, loading) danger plain loading
@@ -18,7 +18,7 @@
       .cta-wrapper
         rh-floating-button(color-type='warning', fixed, bottom, right)
           i.fas.fa-plus
-        rh-floating-button(color-type='warning', bottom, right)
+        rh-floating-button(color-type='warning', bottom, right size="large" plain)
           i.fas.fa-plus
       .cta-wrapper
         rh-loader(size="large")
@@ -33,9 +33,9 @@
 </template>
 
 <script>
-  import RhButton from '../elements/RhButton'
-  import RhFloatingButton from '../elements/RhFloatingButton'
-  import RhLoader from '../elements/RhLoader'
+  import RhButton from '../components/elements/RhButton'
+  import RhFloatingButton from '../components/elements/RhFloatingButton'
+  import RhLoader from '../components/elements/RhLoader'
 	export default {
     data () {
       return {}
@@ -51,7 +51,7 @@
 </script>
 
 <style lang="sass" scoped>
-  #app
+  .rh-view-buttons
     padding: 50px
     .buttons
       display: flex

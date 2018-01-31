@@ -18,6 +18,4 @@
     line-height: 1
     display: flex
     justify-content: center
-    //min-height: 100vh
-
 </style>
