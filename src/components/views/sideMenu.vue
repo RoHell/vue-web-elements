@@ -41,9 +41,9 @@ export default {
             cursor: pointer
             border-bottom: 1px solid transparent
             transition: .2s
-            &:hover
-                background: #fff
-                color: #212121
+            &:hover:not(.active)
+                color: #fff
+                text-decoration: underline
         
         .active
             background: #fff

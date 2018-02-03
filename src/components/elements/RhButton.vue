@@ -11,7 +11,7 @@
       :loading='loading', 
       :plain='plain', 
       :round='round'
-       @click="$emit('click')")
+      @click="$emit('click')")
       slot
 
 </template>
