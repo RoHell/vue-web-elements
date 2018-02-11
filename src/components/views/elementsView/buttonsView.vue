@@ -1,11 +1,11 @@
 <template lang="pug">
   .buttons-view
     rh-button(@click='callback') normal
-    rh-button(color-type='danger', plain, loading) danger plain loading
+    rh-button(color-type='danger', plain) danger plain
     rh-button(color-type='success', round) succes round
-    rh-button(color-type='warning', loading, size="tiny") warning loading tiny
-    rh-button(loading size="big") loading big
-    rh-button(loading size="large", plain) loading large
+    rh-button(color-type='warning', size="tiny") warning tiny
+    rh-button(size="big") big
+    rh-button(size="large", plain) large
 </template>
 
 <script>
@@ -25,7 +25,10 @@ export default {
 
 <style lang="sass" scoped>
   .buttons-view
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
+    grid-gap: 10px
     .rh-button
-      margin: 10px
+      justify-self: center
 
 </style>

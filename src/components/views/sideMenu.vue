@@ -1,11 +1,11 @@
 <template lang="pug">
     .side-menu
-        .header Components list:
-        .menu-item(
+        .side-menu__header Components list:
+        .side-menu__item(
             v-for="item in menuItems",
             :key="item.name", 
             @click="goToView(item.name)", 
-            :class="{active: isActive(item.path)}"
+            :class="{'side-menu__item--active': isActive(item.path)}"
         ) {{item.name}}
 </template>
 
@@ -33,19 +33,19 @@ export default {
     .side-menu
         background-color: #212121
         color: #ccc
-        .header
+        .side-menu__header
             margin: 20px
             border-bottom: 1px solid #eee
-        .menu-item
+        .side-menu__item
             padding: 10px 20px
             cursor: pointer
             border-bottom: 1px solid transparent
             transition: .2s
-            &:hover:not(.active)
+            &:hover:not(.side-menu__item--active)
                 color: #fff
                 text-decoration: underline
         
-        .active
+        .side-menu__item--active
             background: #fff
             color: #212121
 </style>

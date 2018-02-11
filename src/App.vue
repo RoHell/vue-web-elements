@@ -1,7 +1,6 @@
-<template>
-  <div id="app">
-  	<router-view></router-view>
-	</div>
+<template lang="pug">
+  #app
+  	router-view
 </template>
 
 <script>
@@ -11,11 +10,8 @@
 </script>
 
 <style lang="sass">
-  #_app
+  #app
     font-family: 'Lato', sans-serif
     font-style: normal
     font-weight: 400
-    line-height: 1
-    display: flex
-    justify-content: center
 </style>
