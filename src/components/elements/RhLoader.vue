@@ -1,15 +1,18 @@
 <template lang="pug">
-  .rh-loader(:size="size", :class="color")
+  svg(:size="size", viewBox="25 25 50 50")
+    circle(:class="color" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10")
 </template>
 
 <script>
   export default {
     props: {
       size: {
-        type: String
+        type: String,
+        default: ''
       },
       color: {
-        type: String
+        type: String,
+        default: 'info'
       }
     }
   }
@@ -26,28 +29,37 @@
     width: $size
     height: $size
 
-  .rh-loader
-    position: absolute
-    width: 100%
-    height: 100%
-    z-index: 10
-    border: 3px solid $color-light-grey
-    border-right-color: transparent    
+  svg
     box-sizing: border-box
-    border-radius: 50%
-    animation: spin 1.3s cubic-bezier(0.55, 0.2, 0.55, 0.8) infinite
+    position: absolute
     +loader-position-size($size-normal)
+    animation: rotate 2s linear infinite
 
-    @keyframes spin
-      to
-        transform: rotate(360deg)
+    circle
+      stroke-dasharray: 1, 200
+      stroke-dashoffset: 0
+      animation: dash 1.5s ease-in-out infinite
 
-    @each $size, $button-size in $sizes-map
-      &[size=#{$size}]
-        +loader-position-size($button-size)
+  @each $color-type, $color, $index in $color-types-map
+    &.#{$color-type}
+      stroke: lighten($color, 15%)
 
-    @each $color-type, $color, $index in $color-types-map
-      &.#{$color-type}
-        border: 3px solid lighten($color, 15%)
-        border-right-color: transparent
+  @each $size, $button-size in $sizes-map
+    &[size=#{$size}]
+      +loader-position-size($button-size)
+
+  @keyframes rotate
+    100%
+      transform: rotate(360deg)
+
+  @keyframes dash
+    0%
+      stroke-dasharray: 1, 200
+      stroke-dashoffset: 0
+    50%
+      stroke-dasharray: 89, 200
+      stroke-dashoffset: -35px
+    100%
+      stroke-dasharray: 89, 200
+      stroke-dashoffset: -124px
 </style>
