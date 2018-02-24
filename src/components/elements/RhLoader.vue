@@ -30,7 +30,6 @@
     height: $size
 
   svg
-    box-sizing: border-box
     position: absolute
     +loader-position-size($size-normal)
     animation: rotate 2s linear infinite
