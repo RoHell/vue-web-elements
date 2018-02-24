@@ -35,10 +35,13 @@ export default {
 
 <style lang="sass" scoped>
   .loaders-view
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+    grid-auto-rows: 100px
+    grid-gap: 40px
     .cta-wrapper
       position: relative
       width: 300px
       height: 100px
       border: 1px solid #ccc
-
 </style>

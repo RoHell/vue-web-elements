@@ -30,5 +30,4 @@ export default {
     grid-gap: 10px
     .rh-button
       justify-self: center
-
 </style>
