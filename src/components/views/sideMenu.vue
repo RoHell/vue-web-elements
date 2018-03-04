@@ -1,12 +1,11 @@
 <template lang="pug">
     .side-menu
-        .side-menu__header Components list:
-        .side-menu__item(
-            v-for="item in menuItems",
-            :key="item.name", 
-            @click="goToView(item.name)", 
-            :class="{'side-menu__item--active': isActive(item.path)}"
-        ) {{item.name}}
+      .side-menu__item(
+          v-for="item in menuItems",
+          :key="item.name", 
+          @click="goToView(item.name)", 
+          :class="{'side-menu__item--active': isActive(item.path)}"
+      ) {{item.name}}
 </template>
 
 <script>
@@ -31,21 +30,21 @@ export default {
 
 <style scoped lang="sass">
     .side-menu
-        background-color: #212121
-        color: #ccc
-        .side-menu__header
-            margin: 20px
-            border-bottom: 1px solid #eee
-        .side-menu__item
-            padding: 10px 20px
-            cursor: pointer
-            border-bottom: 1px solid transparent
-            transition: .2s
-            &:hover:not(.side-menu__item--active)
-                color: #fff
-                text-decoration: underline
-        
-        .side-menu__item--active
-            background: #fff
-            color: #212121
+      background-color: #212121
+      color: #ccc
+      padding: 10px
+      height: 100vh
+      z-index: 10
+      .side-menu__item
+        padding: 10px
+        margin: 5px 0
+        cursor: pointer
+        border-left: 2px solid #ccc
+        transition: .2s
+        &:hover, 
+          color: #fff
+          border-left: 4px solid #fff
+      .side-menu__item--active
+        color: #fff
+        border-left: 4px solid #fff
 </style>
