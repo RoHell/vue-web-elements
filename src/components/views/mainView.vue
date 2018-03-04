@@ -1,6 +1,7 @@
 <template lang="pug">
   .main-view
-    slot
+    transition(name="slide-in" mode="out-in")
+      slot
 </template>
 
 <script>
@@ -11,10 +12,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  @import '../../sass/transitions/slide-in'
   .main-view
     padding: 50px
-    .header
-      font-size: 24px
-      borde-bottom: 1px solid #ccc
-      padding-bottom: 2px
 </style>
