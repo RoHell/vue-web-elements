@@ -19,8 +19,7 @@ export default {
 
 <style lang="sass" scoped>
   .app-view
+    display: flex
     min-height: 100vh
-    display: grid
-    grid-template-columns: minmax(auto, 200px) 1fr
-    grid-auto-rows: 1fr
+    overflow: hidden
 </style>

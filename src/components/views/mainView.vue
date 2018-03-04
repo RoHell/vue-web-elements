@@ -14,5 +14,7 @@ export default {
 <style lang="sass" scoped>
   @import '../../sass/transitions/slide-in'
   .main-view
+    flex: 1
+    margin-left: 220px
     padding: 50px
 </style>
