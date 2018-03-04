@@ -9,7 +9,7 @@
   }
 </script>
 
-<style lang="sass">
+<style scoped lang="sass">
   #app
     font-family: 'Lato', sans-serif
     font-style: normal
