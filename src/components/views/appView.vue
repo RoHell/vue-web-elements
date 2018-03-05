@@ -20,6 +20,5 @@ export default {
 <style lang="sass" scoped>
   .app-view
     display: flex
-    min-height: 100vh
     overflow: hidden
 </style>

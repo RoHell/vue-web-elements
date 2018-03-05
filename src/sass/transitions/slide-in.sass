@@ -1,13 +1,13 @@
 .slide-in-enter-active, 
-  transition: all .2s ease-out
+  transition: transform .3s ease-out, opacity 0.2s ease-out 0.1s
 
 .slide-in-leave-active
-  transition: all .2s ease-in
+  transition: transform .3s ease-in, opacity 0.2s ease-in 0.1s
 
 .slide-in-enter
   opacity: 0
-  transform: translateX(-200px)
+  transform: translateX(-500px)
 
 .slide-in-leave-to
   opacity: 0
-  transform: translateX(200px)
+  transform: translateX(500px)
