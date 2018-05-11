@@ -1,15 +1,15 @@
 <template lang="pug">
   .rh-button
     rh-loader(
-      v-if='loading', 
-      :size='size', 
+      v-if='loading',
+      :size='size',
       :color='colorType')
     button(
-      :class='colorType', 
-      :disabled='disabled || loading', 
-      :size='size', 
-      :loading='loading', 
-      :plain='plain', 
+      :class='colorType',
+      :disabled='disabled || loading',
+      :size='size',
+      :loading='loading',
+      :plain='plain',
       :round='round'
       @click="$emit('click')")
       slot
@@ -29,7 +29,7 @@
     },
     computed: {},
     components: {RhLoader}
-  }  
+  }
 </script>
 
 <style lang="sass" scoped>
@@ -42,9 +42,9 @@
     padding: $size/4 $size/2
     svg, .fa
       padding-right: $size/2
-  
+
   .rh-button
-    display: table
+    margin: auto
     position: relative
 
     button
@@ -57,6 +57,6 @@
         border-radius: 40px
 
       @each $size, $button-size in $sizes-map
-        &[size=#{$size}]
+        &[size='#{$size}']
           +button-font-padding($button-size)
 </style>

@@ -44,7 +44,7 @@
       stroke: lighten($color, 15%)
 
   @each $size, $button-size in $sizes-map
-    &[size=#{$size}]
+    &[size='#{$size}']
       +loader-position-size($button-size)
 
   @keyframes rotate
