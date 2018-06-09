@@ -11,7 +11,7 @@ export default [{
     path: '/loader'
   },
   {
-    name: 'projects',
-    path: '/projects'
+    name: 'arrows',
+    path: '/arrows'
   }
 ]
