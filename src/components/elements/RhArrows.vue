@@ -1,6 +1,5 @@
 <template lang="pug">
-  .rh-arrows
-    svg(
+  svg(
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       :width="width"
@@ -23,6 +22,7 @@
           :dur="speed"
           :begin="arrowDelay(arrowIndex)"
           repeatCount="indefinite")
+    
 </template>
 
 <script>
