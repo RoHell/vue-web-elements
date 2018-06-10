@@ -1,16 +1,30 @@
 <template lang="pug">
   .arrows-view
-    rh-arrows(speed="2", color="green", :arrowsNumber="4")
+    rh-arrows(
+      :speed="propsValues.speed",
+      :color="propsValues.color",
+      :arrowsNumber="propsValues.arrowsNumber",
+      :width="propsValues.width")
+    props-view(:code="propsValues" @onPropsChange="propsValues = $event")
 </template>
 
 <script>
 import RhArrows from "../../../components/elements/RhArrows";
+import propsView from "../../../components/views/propsView"
 export default {
   data() {
-    return {};
+    return {
+      propsValues: {
+        speed: 2,
+        color: 'green',
+        arrowsNumber: 3,
+        width: "50"
+      }
+    };
   },
+  computed: {},
   methods: {},
-  components: { RhArrows }
+  components: { RhArrows, propsView}
 };
 </script>
 
