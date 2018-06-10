@@ -1,22 +1,18 @@
 <template lang="pug">
   .arrows-view
-    arrows(speed="1.3", color="green", :arrowsNumber="3")
+    rh-arrows(speed="2", color="green", :arrowsNumber="4")
 </template>
 
 <script>
-import arrows from "../../../components/elements/arrows";
+import RhArrows from "../../../components/elements/RhArrows";
 export default {
   data() {
     return {};
   },
   methods: {},
-  components: { arrows }
+  components: { RhArrows }
 };
 </script>
 
 <style lang="sass" scoped>
-  .arrows-view
-    display: flex
-    justify-content: center
-    align-items: center
 </style>
