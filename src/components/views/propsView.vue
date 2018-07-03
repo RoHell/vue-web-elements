@@ -2,31 +2,45 @@
 .props-view
   .props-view__title Props:
   .props-view__props(
-    v-for="(value, key, index) in code"
+    v-for="(value, key) in props"
     :key="key")
-    label(:for="key") {{key}}
-    input(type="text" :id="key" v-model.number="propsValues[key]" @change="onPropsChange")
+    .props-view__props__key {{key}}
+    .props-view__props__value
+      div
+        span(@click="onSubtract(key)") -
+        input(type="text" v-model="propsValues[key]")
+        span(@click="onAdd(key)") +
+      //- div(v-else)
+        input(type="text" v-model="propsValues[key]")
+    
 </template>
 
 <script>
 
 export default {
   props: {
-    code: {
+    props: {
       type: Object,
       default: () => { return {} }
     }
   },
   data () {
     return {
-      propsValues: this.code
+      propsValues: this.props
     }
   },
   computed: {},
-  watch: {},
-  methods: {
-    onPropsChange () {
+  watch: {
+    propsValues () {
       this.$emit('onPropsChange', this.propsValues)
+    }
+  },
+  methods: {
+    onAdd (key) {
+      this.$emit('onAdd', key)
+    },
+    onSubtract (key) {
+      this.$emit('onSubtract', key)
     }
   }
 }
@@ -40,9 +54,12 @@ export default {
       font-weight: 600
     .props-view__props
       display: flex
+      justify-content: space-between
+      align-item: center
       margin: 10px 0
-      label
-        flex-basis: 20%
-      input
-        flex-basis: 20%
+      .props-view__props__key
+      .props-view__props__value
+        display: flex
+        align-items: center
+        padding: 0 5px
 </style>

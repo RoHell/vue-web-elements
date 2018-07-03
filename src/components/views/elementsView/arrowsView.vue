@@ -5,7 +5,7 @@
       :color="propsValues.color",
       :arrowsNumber="propsValues.arrowsNumber",
       :width="propsValues.width")
-    props-view(:code="propsValues" @onPropsChange="propsValues = $event")
+    props-view(:props="propsValues" @onPropsChange="onPropsChange" @onAdd="onAdd" @onSubtract="onSubtract")
 </template>
 
 <script>
@@ -23,10 +23,27 @@ export default {
     };
   },
   computed: {},
-  methods: {},
+  methods: {
+    onPropsChange (event) {
+
+    },
+    onAdd (key) {
+      let value = this.propsValues[key]
+      this.propsValues[key] = 0
+      this.propsValues[key] = value++
+    },
+    onSubtract (key) {
+      let value = this.propsValues[key]
+      this.propsValues[key] = 0
+      this.propsValues[key] = value--
+    }
+  },
   components: { RhArrows, propsView}
 };
 </script>
 
 <style lang="sass" scoped>
+  .arrows-view
+    display: flex
+    justify-content: space-between
 </style>

@@ -2,7 +2,7 @@
   svg(
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
-      :width="width"
+      :width="computedWidth"
       height="100%"
       :viewBox="viewBox")
       path.arrow(
@@ -12,14 +12,14 @@
         :fill="color")
         animateMotion(
           :path="animationPath"
-          :dur="speed"
+          :dur="computedSpeed"
           repeatCount="indefinite"
           :begin="arrowDelay(arrowIndex)")
         animate(
           attributeName="opacity"
           values="0;1;1;0"
           keyTimes="0;0.3;0.7;1"
-          :dur="speed"
+          :dur="computedSpeed"
           :begin="arrowDelay(arrowIndex)"
           repeatCount="indefinite")
     
@@ -30,15 +30,15 @@
     components: {},
     props: {
       arrowsNumber: {
-        type: Number,
+        type: [String, Number],
         default: 3
       },
       color: {
-        type: String,
+        type: [String, Number],
         default: "#666"
       },
       speed: {
-        type: Number,
+        type: [String, Number],
         default: 2
       },
       width: {
@@ -48,19 +48,28 @@
     },
     computed: {
       arrowDelayFraction () {
-        return this.speed / this.arrowsNumber
+        return this.computedSpeed / this.computedArrowsNumber
       },
       viewBoxWidth () {
-        return (this.arrowsNumber + 0.75) * 3 
+        return (this.computedArrowsNumber + 0.75) * 3 
       },
       pathLength () {
-        return this.arrowsNumber * 3
+        return this.computedArrowsNumber * 3
       },
       viewBox () {
         return `0 0 ${this.viewBoxWidth} 2`
       },
       animationPath () {
         return `M 0 0, L ${this.pathLength} 0`
+      },
+      computedWidth () {
+        return this.width === '' ? '100%' : this.width
+      },
+      computedArrowsNumber () {
+        return this.arrowsNumber === '' ? 0 : this.arrowsNumber
+      },
+      computedSpeed () {
+        return this.speed === '' ? 0 : this.speed
       }
     },
     methods: {
